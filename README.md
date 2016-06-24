@@ -1,4 +1,4 @@
-# p6_slack-webhook
+# WebService::Slack::webhook
 Small module to use a Slack 'Incoming Webhook' easily.
 
 
