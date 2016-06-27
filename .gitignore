@@ -1,0 +1,4 @@
+*.moarvm
+*.swp
+lib/.precomp/
+.precomp/
