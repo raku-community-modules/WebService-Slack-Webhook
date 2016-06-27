@@ -25,7 +25,7 @@ This will be the method to send a message from. It will be overloaded so that it
 #Using a hash.
 my %info = (
   username  => "perl6-bot",
-  icon      => ":robot_face:",
+  icon_emoji => ":robot_face:",
   text      => "Beep, boop. *excited robot sounds*"
 );
 $slack.send(%info);
@@ -35,7 +35,7 @@ $slack.send(%info);
 #Without a hash.
 $slack.send(
   username  => "perl6-bot",
-  icon      => ":robot_face:",
+  icon_emoji => ":robot_face:",
   text      => "Beep, boop. *excited robot sounds*"
 );
 
