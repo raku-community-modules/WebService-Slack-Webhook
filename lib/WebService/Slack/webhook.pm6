@@ -6,9 +6,29 @@ use JSON::Fast;
 #Make the class.
 class WebService::Slack::webhook {
     #Make some vars.
-    has Str $!url;
+    has Str $.url is required where {$_ ~~ /https\:\/\/hooks\.slack\.com\/services\//};
 
-    #Make some methods to build the object.
-    multi method new(Str:D $var) { self.bless(:url($var)); }
-    multi method new($other?) { die "No Slack integration given!"; }
+    #Using a hash for the info.
+    multi method send(%info) {
+        say "Entering hash method.";
+        #Make sure the data is valid.
+        unless all %info.values.map({$_ ~~ Str|Any}) {
+            die "Bad data in key-value pairs.\nGot: {%info.pairs}";
+        }
+
+        #Setup the data to be sent.
+        my %header = :Content-type("application/json");
+        my $body = Buf.new(to-json(%info).ords);
+
+        #Send the request.
+        say $.url.perl ~ "\n" ~ %header.perl ~ "\n" ~ %info.perl;
+        my $resp = Net::HTTP::POST($.url, :%header, :$body);
+    }
+
+    #using a string for the info.
+    multi method send(Str $msg) {
+        say "Entering string method.";
+        my %info = (:text($msg));
+        self.send(%info);
+    }
 }

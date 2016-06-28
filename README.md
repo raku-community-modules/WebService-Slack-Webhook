@@ -10,11 +10,6 @@ The `.new` method will require an 'incoming webhook' integration link from Slack
 ```
 #String containing the URL.
 my $slack = WebService::Slack::webhook.new(url => "$url");
-
-#Or...
-
-#Path to a file with the URL.
-my $slack = WebService::Slack::webhook.new(path => "/path/to/file");
 ```
 
 ###`.send`
@@ -25,19 +20,10 @@ This will be the method to send a message from. It will be overloaded so that it
 #Using a hash.
 my %info = (
   username  => "perl6-bot",
-  icon      => ":robot_face:",
+  icon_emoji => ":robot_face:",
   text      => "Beep, boop. *excited robot sounds*"
 );
 $slack.send(%info);
-
-#Or possibly...
-
-#Without a hash.
-$slack.send(
-  username  => "perl6-bot",
-  icon      => ":robot_face:",
-  text      => "Beep, boop. *excited robot sounds*"
-);
 
 #Or if you just want to send something...
 
