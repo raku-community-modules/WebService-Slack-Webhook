@@ -17,4 +17,13 @@ isa-ok WebService::Slack::Webhook.new(url => "$fake-url"),
     'WebService::Slack::Webhook',
     'Good object can be made with url';
 
+
+#Make a good object with a url.
+isa-ok WebService::Slack::Webhook.new(
+        url => "$fake-url",
+        defaults => %( :username<Test> )
+    ),
+    'WebService::Slack::Webhook',
+    'Good object can be made with defaults';
+
 done-testing;

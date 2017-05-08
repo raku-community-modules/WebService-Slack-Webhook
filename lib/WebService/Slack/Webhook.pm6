@@ -7,13 +7,12 @@ use JSON::Fast;
 class WebService::Slack::Webhook {
     #Make some vars.
     has Str $.url is required where {$_ ~~ regex {'https://hooks.slack.com/services/'} };
+    has %.defaults;
 
     #Using a hash for the info.
     multi method send(%info) {
-        #Make sure the data is valid.
-        unless all %info.values.map({$_ ~~ Str|Any}) {
-            die "Bad data in key-value pairs.\nGot: {%info.pairs}";
-        }
+        #Add the defaults.
+        %info.append: %!defaults.pairs.grep(-> $p {!%info{$p.keys}});
 
         #Setup the data to be sent.
         my %header = :Content-type("application/json");
@@ -25,7 +24,6 @@ class WebService::Slack::Webhook {
 
     #using a string for the info.
     multi method send(Str $msg) {
-        my %info = (:text($msg));
-        self.send(%info);
+        self.send: %(:text($msg));
     }
 }
