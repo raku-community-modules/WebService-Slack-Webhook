@@ -6,7 +6,7 @@ use lib 'lib';
 use WebService::Slack::Webhook;
 
 #Make some vars
-my $fake-url = "https://hooks.slack.com/services/example.html";
+my $fake-url = "https://hooks.slack.com/services/example/integration/url";
 
 #Make a bad object.
 dies-ok {WebService::Slack::Webhook.new()},
