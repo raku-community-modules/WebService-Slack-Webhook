@@ -6,7 +6,7 @@ use JSON::Fast;
 #Make the class.
 class WebService::Slack::Webhook {
     #Make some vars.
-    has Str $.url is required where {$_ ~~ /https\:\/\/hooks\.slack\.com\/services\//};
+    has Str $.url is required where {$_ ~~ regex {'https://hooks.slack.com/services/'} };
 
     #Using a hash for the info.
     multi method send(%info) {
