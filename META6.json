@@ -24,7 +24,7 @@
     "provides": {
         "WebService::Slack::Webhook": "lib/WebService/Slack/Webhook.pm6"
     },
-    "version": "0.1.0",
+    "version": "0.1.1",
     "supersedes": {},
     "authors": [
         "Nic Quoziente"
