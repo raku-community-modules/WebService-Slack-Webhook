@@ -3,12 +3,12 @@
 use Test;
 use lib 'lib';
 
-use WebService::Slack::webhook;
+use WebService::Slack::Webhook;
 
 #Make some vars
 my $fake-url = "https://hooks.slack.com/services/example/integration/url";
 
-my $slack = WebService::Slack::webhook.new(url => $fake-url);
+my $slack = WebService::Slack::Webhook.new(url => $fake-url);
 my %info = (
     text => "This is a test with a hash",
     username => "test-bot"

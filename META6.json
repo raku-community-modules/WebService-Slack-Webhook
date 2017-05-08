@@ -22,7 +22,7 @@
     "license": "Artistic-2.0",
     "test-depends": [],
     "provides": {
-        "WebService::Slack::Webhook": "lib/WebService/Slack/webhook.pm6"
+        "WebService::Slack::Webhook": "lib/WebService/Slack/Webhook.pm6"
     },
     "version": "0.1.0",
     "supersedes": {},

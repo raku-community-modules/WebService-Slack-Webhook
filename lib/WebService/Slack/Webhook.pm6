@@ -4,7 +4,7 @@ use Net::HTTP::POST;
 use JSON::Fast;
 
 #Make the class.
-class WebService::Slack::webhook {
+class WebService::Slack::Webhook {
     #Make some vars.
     has Str $.url is required where {$_ ~~ /https\:\/\/hooks\.slack\.com\/services\//};
 

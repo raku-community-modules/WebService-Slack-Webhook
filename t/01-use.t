@@ -4,6 +4,6 @@ use Test;
 use lib 'lib';
 
 #Make sure we can even call it.
-use-ok 'WebService::Slack::webhook';
+use-ok 'WebService::Slack::Webhook';
 
 done-testing;
