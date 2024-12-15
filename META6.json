@@ -1,33 +1,37 @@
 {
-    "name": "WebService::Slack::Webhook",
-    "source-url": "https://github.com/nicqrocks/perl6-slack-webhook.git",
-    "support": {
-        "source": null
-    },
-    "emulates": {},
-    "perl": "6.c",
-    "resources": [],
-    "build-depends": [],
-    "auth": "github:nicqrocks",
-    "excludes": {},
-    "superseded-by": {},
-    "depends": [
-        "Net::HTTP::POST",
-        "JSON::Fast"
-    ],
-    "tags": [
-        "web",
-        "slack"
-    ],
-    "license": "Artistic-2.0",
-    "test-depends": [],
-    "provides": {
-        "WebService::Slack::Webhook": "lib/WebService/Slack/Webhook.pm6"
-    },
-    "version": "0.1.2",
-    "supersedes": {},
-    "authors": [
-        "Nic Quoziente"
-    ],
-    "description": "Easy way to send a message to Slack"
+  "auth": "zef:raku-community-modules",
+  "authors": [
+    "Nic Quoziente"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+    "Net::HTTP::POST",
+    "JSON::Fast"
+  ],
+  "description": "Support for Slack's WebService API",
+  "emulates": {
+  },
+  "excludes": {
+  },
+  "license": "Artistic-2.0",
+  "name": "WebService::Slack::Webhook",
+  "perl": "6.c",
+  "provides": {
+    "WebService::Slack::Webhook": "lib/WebService/Slack/Webhook.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "https://github.com/raku-community-modules/WebService-Slack-Webhook.git",
+  "superseded-by": {
+  },
+  "supersedes": {
+  },
+  "tags": [
+    "web",
+    "slack"
+  ],
+  "test-depends": [
+  ],
+  "version": "0.1.2"
 }

@@ -1,9 +1,8 @@
-#!/usr/bin/env perl6
-
 use Test;
-use lib 'lib';
 
 use WebService::Slack::Webhook;
+
+plan 3;
 
 #Make some vars
 my $fake-url = "https://hooks.slack.com/services/example/integration/url";
@@ -24,5 +23,4 @@ $slack.defaults = %( icon_emoji => ":robot_face:" );
 is-deeply $slack.send(%info), %( |%info, icon_emoji => ":robot_face:" ),
     "Send works with default arguments";
 
-
-done-testing;
+# vim: expandtab shiftwidth=4

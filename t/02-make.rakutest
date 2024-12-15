@@ -1,9 +1,8 @@
-#!/usr/bin/env perl6
-
 use Test;
-use lib 'lib';
 
 use WebService::Slack::Webhook;
+
+plan 3;
 
 #Make some vars
 my $fake-url = "https://hooks.slack.com/services/example/integration/url";
@@ -26,4 +25,4 @@ isa-ok WebService::Slack::Webhook.new(
     'WebService::Slack::Webhook',
     'Good object can be made with defaults';
 
-done-testing;
+# vim: expandtab shiftwidth=4
